@@ -11,6 +11,7 @@ This program implements the following string operations without using built-in s
 ---
 
 ## Pseudocode
+'''
 START
 READ VNKstr1, VNKstr2
 CALCULATE length of VNKstr1
