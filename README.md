@@ -66,9 +66,9 @@ int main() {
 
     return 0;
 }
-Sample Output
-sql
-Copy code
+
+ Output=
+
 Enter first string: hello
 Enter second string: world
 
