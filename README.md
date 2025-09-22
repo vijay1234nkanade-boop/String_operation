@@ -1,8 +1,7 @@
-
 # 1. Basic String Operations
 
 ## Program Info
-This program implements the following string operations without using built-in string functions:
+Implements string operations without using built-in string functions:
 - Length calculation  
 - Copy  
 - Reverse  
@@ -11,13 +10,12 @@ This program implements the following string operations without using built-in s
 ---
 
 ## Pseudocode
-'''
 START
-READ VNKstr1, VNKstr2
-CALCULATE length of VNKstr1
-COPY VNKstr1 into VNKcopy
-REVERSE VNKstr1 into VNKrstr
-CONCATENATE VNKstr1 and VNKstr2 into VNKconcat
+READ str1, str2
+CALCULATE length of str1
+COPY str1 into copy
+REVERSE str1 into rstr
+CONCATENATE str1 and str2 into concat
 PRINT results
 END
 
@@ -27,62 +25,50 @@ Copy code
 ---
 
 ## Actual Program
-```c
-#include <stdio.h>
+```cpp
+#include <iostream>
+using namespace std;
 
 int main() {
     char VNKstr1[100], VNKstr2[100], VNKcopy[100], VNKrstr[100], VNKconcat[200];
     int VNKi, VNKlen = 0;
 
-    printf("Enter first string: ");
-    gets(VNKstr1);
+    cout << "Enter first string: ";
+    cin.getline(VNKstr1, 100);
 
-    printf("Enter second string: ");
-    gets(VNKstr2);
+    cout << "Enter second string: ";
+    cin.getline(VNKstr2, 100);
 
     // Length
-    for (VNKi = 0; VNKstr1[VNKi] != '\0'; VNKi++) {
-        VNKlen++;
-    }
+    for (VNKi = 0; VNKstr1[VNKi] != '\0'; VNKi++) VNKlen++;
 
     // Copy
-    for (VNKi = 0; VNKstr1[VNKi] != '\0'; VNKi++) {
-        VNKcopy[VNKi] = VNKstr1[VNKi];
-    }
+    for (VNKi = 0; VNKstr1[VNKi] != '\0'; VNKi++) VNKcopy[VNKi] = VNKstr1[VNKi];
     VNKcopy[VNKi] = '\0';
 
     // Reverse
     int VNKj = 0;
-    for (VNKi = VNKlen - 1; VNKi >= 0; VNKi--) {
-        VNKrstr[VNKj++] = VNKstr1[VNKi];
-    }
+    for (VNKi = VNKlen - 1; VNKi >= 0; VNKi--) VNKrstr[VNKj++] = VNKstr1[VNKi];
     VNKrstr[VNKj] = '\0';
 
-    // Concatenation
+    // Concatenate
     VNKi = 0; VNKj = 0;
-    while (VNKstr1[VNKi] != '\0') {
-        VNKconcat[VNKj++] = VNKstr1[VNKi++];
-    }
+    while (VNKstr1[VNKi] != '\0') VNKconcat[VNKj++] = VNKstr1[VNKi++];
     VNKi = 0;
-    while (VNKstr2[VNKi] != '\0') {
-        VNKconcat[VNKj++] = VNKstr2[VNKi++];
-    }
+    while (VNKstr2[VNKi] != '\0') VNKconcat[VNKj++] = VNKstr2[VNKi++];
     VNKconcat[VNKj] = '\0';
 
     // Output
-    printf("\nLength of first string: %d", VNKlen);
-    printf("\nCopy of first string: %s", VNKcopy);
-    printf("\nReverse of first string: %s", VNKrstr);
-    printf("\nConcatenation of two strings: %s\n", VNKconcat);
+    cout << "\nLength of first string: " << VNKlen;
+    cout << "\nCopy of first string: " << VNKcopy;
+    cout << "\nReverse of first string: " << VNKrstr;
+    cout << "\nConcatenation of two strings: " << VNKconcat << endl;
 
     return 0;
 }
-
-'''
- Output
-
-
-
+Sample Output
+sql
+Copy code
 Enter first string: hello
 Enter second string: world
 
