@@ -25,7 +25,7 @@ Copy code
 ---
 
 ## Actual Program
-```cpp
+
 #include <iostream>
 using namespace std;
 
@@ -66,9 +66,10 @@ int main() {
 
     return 0;
 }
-Sample Output
-sql
-Copy code
+
+---------
+ Output=
+
 Enter first string: hello
 Enter second string: world
 
@@ -76,3 +77,4 @@ Length of first string: 5
 Copy of first string: hello
 Reverse of first string: olleh
 Concatenation of two strings: helloworld
+```cpp
